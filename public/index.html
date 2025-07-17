@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet Shop Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Sweet Shop Management</h1>
+  </header>
+  <main>
+    <section id="category-section">
+      <h2>Categories</h2>
+      <form id="add-category-form">
+        <input type="text" id="category-name" placeholder="New Category" required>
+        <button type="submit">Add Category</button>
+      </form>
+      <ul id="category-list"></ul>
+    </section>
+    <section id="sweet-section">
+      <h2>Sweets</h2>
+      <form id="add-form">
+        <input type="text" id="name" placeholder="Name" required>
+        <select id="category" required title="Select Category"></select>
+        <input type="number" id="price" placeholder="Price" required>
+        <input type="number" id="quantity" placeholder="Quantity" required>
+        <input type="text" id="description" placeholder="Description">
+        <input type="url" id="imageUrl" placeholder="Image URL">
+        <input type="date" id="expiryDate" placeholder="Expiry Date">
+        <button type="submit">Add Sweet</button>
+      </form>
+      <div id="sweet-controls">
+        <input type="text" id="search-name" placeholder="Search by name">
+        <select id="search-category"><option value="">All Categories</option></select>
+        <input type="number" id="min-price" placeholder="Min Price">
+        <input type="number" id="max-price" placeholder="Max Price">
+        <select id="expiry-status">
+          <option value="">All</option>
+          <option value="valid">Valid</option>
+          <option value="expired">Expired</option>
+        </select>
+        <select id="sort-by">
+          <option value="name">Sort by Name</option>
+          <option value="price">Sort by Price</option>
+          <option value="expiryDate">Sort by Expiry</option>
+        </select>
+        <select id="sort-order">
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+        <button id="filter-btn">Filter/Sort</button>
+      </div>
+      <div id="low-stock-alert"></div>
+      <div id="sweet-list" class="sweet-list"></div>
+    </section>
+    <section id="order-section">
+      <h2>Order History</h2>
+      <ul id="order-list"></ul>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
